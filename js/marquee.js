@@ -26,11 +26,11 @@
 
       var defaults = {
         duration: 20000,
-        padding: 10,
+        padding: 0,
         marquee_class: '.marquee',
         container_class: '.container',
         sibling_class: 0,
-        hover: true
+        hover: false
       };
 
       var config = $.extend({}, defaults, settings);
@@ -60,7 +60,8 @@
       var marqueeContent =  $(config.marquee_class).html()
       var containerWidth = $(config.container_class).width();
       var contentWidth = $(config.marquee_class).width();
-
+      console.log(contentWidth)//1128
+      console.log(containerWidth)//1168
       
       if (config.sibling_class == 0) { 
         var widthToIgnore = 0;
@@ -74,8 +75,6 @@
       var spawnAmount = Math.ceil(containerWidth / contentWidth);
       //init vars from input
 
-
-      console.log(config);
 
       $(config.marquee_class).remove();
 
